@@ -1,0 +1,15 @@
+<h3>Agrega aqui una tarea nueva</h3>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary|secondary|
+                                 success|danger|warning|info|
+                                 light|dark|link">
+                                 Submit
+   </button>
+</form>
+<tr></tr><tr></tr>
+<a href= "{% url 'Tareas' %}">
+    Atras
+</a>

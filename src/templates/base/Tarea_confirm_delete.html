@@ -1,0 +1,11 @@
+
+<form method="POST"> 
+    {% csrf_token %}
+    
+    <p>Estas a punto de borrar la tarea "{{tarea}}" de tu lista</p>
+    <button type="submit" class="btn btn-primary|secondary|success|
+                                danger|warning|info|light|dark|link">
+                                Borrar                 
+    </button>
+    <a href="{% url 'Tareas' %}">Atras</a>
+</form>

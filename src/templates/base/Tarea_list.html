@@ -1,13 +1,29 @@
+
+{% if request.user.is_authenticated %}
+<p> {{request.user}}</p>
+<a href='{% url "Logout" %}'>Cerrar sesión</a>
+{% else %}
+<a href='{% url "Login" %}'>Iniciar sesión</a>
+{% endif %}
+
+<hr>
 <h1>To Do List</h1>
+
+<a href="{% url 'crear-tarea' %}">Agregar tarea</a>
 
 <table>
     <tr>
         <th>Registro de tareas</th>
+        <th></th>
+        <th></th>
     </tr>
-
-    {% for tarea in object_list %}
+    {% for tarea in tareas %}
     <tr>
         <td>{{tarea.titulo}}</td>
+        <td><a href= "{% url 'Tarea' tarea.id %}">Ver</a></td>
+        <td><a href= "{% url 'editar-tarea' tarea.id %}">Editar</a></td>
+        <td><a href= "{% url 'borrar-tarea' tarea.id %}">Eliminar</a></td>
+
     </tr>
     {% empty %}
     <h3>No hay tareas en la lista</h3>
