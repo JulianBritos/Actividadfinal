@@ -1,4 +1,4 @@
-<h1>Iniciar Sesión</h1>
+<h1>Crear usuario</h1>
 
 <form method="post">
     {% csrf_token %}
@@ -6,8 +6,8 @@
     <button type="submit" class="btn btn-primary|secondary|
                                 success|danger|warning|info
                                 |light|dark|link">
-                                Iniciar Sesión
+                                Crear usuario
     </button>
 </form>
 
-<p>Primera vez que ingresas? <a href="{% url 'Crear_usuario' %}">Crear Usuario</a></p>
+<p>Si ya tenes una cuenta inicia sesion<a href="">Iniciar Sesión</a></p>
